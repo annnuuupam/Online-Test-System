@@ -287,7 +287,7 @@ def aboutUs(request):
 
 
 # API Key
-API_KEY = 'AIzaSyCewQZ_uX4TUPm0LspApFZTzfqdoyPsM24'
+API_KEY = 'Your API Key'
 
 # Configure the Gemini API
 ai.configure(api_key=API_KEY)

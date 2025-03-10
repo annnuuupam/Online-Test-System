@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Created</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Decorative Squares */
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: moveSquare 10s linear infinite;
+        }
+
+        .square:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            animation-duration: 15s;
+        }
+
+        .square:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 12s;
+        }
+
+        .square:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            animation-duration: 18s;
+        }
+
+        .square:nth-child(4) {
+            bottom: 30%;
+            right: 25%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 14s;
+        }
+
+        .square:nth-child(5) {
+            top: 5%;
+            right: 5%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 10s;
+        }
+
+        .square:nth-child(6) {
+            bottom: 15%;
+            left: 5%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 8s;
+        }
+
+        /* Moving Squares Animation */
+        @keyframes moveSquare {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            50% {
+                transform: translate(30px, -30px) rotate(45deg);
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Squares -->
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <h1>User Created Successfully!!!!!</h1>
+    <a href="{% url 'user:login' %}">Click here to login</a><br>
+    <a href="{% url 'user:welcome' %}">Click here for homepage</a>
+</body>
+</html>

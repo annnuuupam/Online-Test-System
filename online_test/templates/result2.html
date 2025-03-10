@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4caf50;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Card Styling */
+        .card {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50px;
+            background: linear-gradient(145deg, #8dcde9, #6bb8d9);
+            border: 1px solid #5a9ac7;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 600px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        h3 {
+            margin: 10px 0;
+            color: #e0e0e0;
+        }
+
+        /* Decorative Squares */
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: moveSquare 10s linear infinite;
+        }
+
+        .square:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            animation-duration: 15s;
+        }
+
+        .square:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 12s;
+        }
+
+        .square:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            animation-duration: 18s;
+        }
+
+        .square:nth-child(4) {
+            bottom: 30%;
+            right: 25%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 14s;
+        }
+
+        .square:nth-child(5) {
+            top: 5%;
+            right: 5%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 10s;
+        }
+
+        .square:nth-child(6) {
+            bottom: 15%;
+            left: 5%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 8s;
+        }
+
+        /* Moving Squares Animation */
+        @keyframes moveSquare {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            50% {
+                transform: translate(30px, -30px) rotate(45deg);
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Squares -->
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <!-- Result Card -->
+    <div class="card">
+        <h1>This is Result Page</h1>
+        <h3>Total Number of Questions: {{total}}</h3>
+        <h3>Total Number of Correct Attempts: {{correct}}</h3>
+        <h3>Total Number of Wrong Attempts: {{wrong}}</h3>
+        <h3>Result Percentage: {{percentage}}</h3>
+    </div>
+
+    <!-- Links -->
+    <div class="card">
+        <b><a href="{% url 'user:homepage' %}">Go Back to Home Page</a></b><br><br>
+        <b><a href="{% url 'user:logout' %}">Logout</a></b>
+    </div>
+</body>
+</html>

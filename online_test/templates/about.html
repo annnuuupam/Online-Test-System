@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Online Testing System</title>
+    <style>
+        /* General Styles */
+        body {
+            background: radial-gradient(circle, #2c3e50, #000);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative; /* Ensure header is above squares */
+            z-index: 2; /* Ensure header is above squares */
+        }
+
+        main {
+            text-align: center;
+            margin: 50px;
+            min-height: 60vh; /* Ensure enough space for content */
+            position: relative; /* Ensure main content is above squares */
+            z-index: 2; /* Ensure main content is above squares */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 2; /* Ensure footer is above squares */
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Decorative Squares */
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            z-index: 1; /* Squares are behind content but above the body */
+            animation: moveSquare 10s linear infinite;
+        }
+
+        .square:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            animation-duration: 15s;
+        }
+
+        .square:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 12s;
+        }
+
+        .square:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            animation-duration: 18s;
+        }
+
+        .square:nth-child(4) {
+            bottom: 30%;
+            right: 25%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 14s;
+        }
+
+        .square:nth-child(5) {
+            top: 5%;
+            right: 5%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 10s;
+        }
+
+        .square:nth-child(6) {
+            bottom: 15%;
+            left: 5%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 8s;
+        }
+
+        /* Moving Squares Animation */
+        @keyframes moveSquare {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            50% {
+                transform: translate(30px, -30px) rotate(45deg);
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Decorative Squares -->
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <header>
+        <h1>About Us - Online Testing System</h1>
+    </header>
+
+    <main>
+        <p>Welcome to the Online Testing System, where we strive to provide a seamless and efficient platform for
+            conducting online tests and assessments. Our mission is to make the testing process easy, secure, and
+            user-friendly for both educators and students.</p>
+
+        <p>With cutting-edge technology and a user-centric approach, we aim to revolutionize the way examinations are
+            conducted. Our platform offers features such as real-time monitoring, secure authentication, and detailed
+            result analysis to ensure a comprehensive testing experience.</p>
+
+        <p>Whether you are an educational institution, a recruitment agency, or an individual educator, our Online
+            Testing System is designed to meet your diverse assessment needs. We believe in the power of education and
+            aim to contribute to the growth and success of individuals and organizations through our innovative
+            platform.</p>
+    </main>
+
+    <footer>
+        &copy; 2024 Online Testing System. All rights reserved.
+    </footer>
+</body>
+</html>

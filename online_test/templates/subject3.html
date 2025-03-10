@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CN Test</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            overflow: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Decorative Squares */
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: moveSquare 10s linear infinite;
+        }
+
+        .square:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            animation-duration: 15s;
+        }
+
+        .square:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 12s;
+        }
+
+        .square:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
+            width: 120px;
+            height: 120px;
+            animation-duration: 18s;
+        }
+
+        .square:nth-child(4) {
+            bottom: 30%;
+            right: 25%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 14s;
+        }
+
+        .square:nth-child(5) {
+            top: 5%;
+            right: 5%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 10s;
+        }
+
+        .square:nth-child(6) {
+            bottom: 15%;
+            left: 5%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 8s;
+        }
+
+        /* Moving Squares Animation */
+        @keyframes moveSquare {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            50% {
+                transform: translate(30px, -30px) rotate(45deg);
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #4caf50;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px auto;
+            width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: block;
+            margin: 20px auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        /* Radio Button Styling */
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Squares -->
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <form action="{% url 'user:result3' %}" method="post">
+        {% csrf_token %}
+        <h1>CN Test</h1>
+        {% for q in quse_list %}
+        <div class="card">
+            <input type="hidden" name="id{{q.q_id}}" value="{{q.q_id}}">
+            <h2>{{q.ques}}</h2>
+            <input type="radio" name="option{{q.q_id}}" value="a">{{q.a}}<br>
+            <input type="radio" name="option{{q.q_id}}" value="b">{{q.b}}<br>
+            <input type="radio" name="option{{q.q_id}}" value="c">{{q.c}}<br>
+            <input type="radio" name="option{{q.q_id}}" value="d">{{q.d}}<br>
+        </div>
+        {% endfor %}
+        <input type="submit" name="ans" value="Submit">
+    </form>
+</body>
+</html>
